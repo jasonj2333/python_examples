@@ -2,6 +2,7 @@ alfabet = 'AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻaąbcćdeęfghijklłmnńoóp
 litery = [litera for litera in alfabet]
 #print(litery)
 
+#wersja klasyczna - tylko małe litery, bez polskich znaków
 def szyfruj_znak(znak, klucz):
     return chr((ord(znak) - 97 + klucz) % 26 + 97)
 
@@ -15,6 +16,7 @@ def szyfruj(tekst, klucz):
 def deszyfruj(tekst, klucz):
     return szyfruj(tekst, 26-klucz)
 
+#wersja małe i duże litery z polskimi znakami i spacją
 def szyfruj_znak_pl(znak, klucz):
     for i, litera in enumerate(litery):
         if znak == litera: 
